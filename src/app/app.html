@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="form-group">
+        <h4>Saved Users Info</h4>
+    </div>
     <table class="table table-hover table-bordered">
         <thead>
         <tr>
@@ -18,7 +21,7 @@
             <td>{{ !(user.saved) ? 'false' : 'true'}}</td>
             <td>
                 <div>
-                    <button class="btn btn-danger" ng-click="app.modifyUser(user)"> Edit</button>
+                    <button class="btn btn btn-success" ng-click="app.modifyUser(user)"> Edit</button>
                 </div>
             </td>
             <td>
@@ -29,17 +32,20 @@
         </tr>
         </tbody>
     </table>
-    <form class="form-inline">
+    <div class="form-group">
+        <h4>Enter user details</h4>
+    </div>
+    <form>
         <div class="form-group">
             <label class="sr-only" for="email">firstName</label>
-            <input type="text" class="form-control" id="email" ng-model="app.user.firstname"></div>
+            <input type="text" class="col-sm-3" id="email" ng-model="app.user.firstname"></div>
         <div class="form-group">
             <label class="sr-only" for="pwd">last name:</label>
-            <input type="text" class="form-control" id="pwd" ng-model="app.user.lastname"></div>
+            <input type="text" class="col-sm-3" id="pwd" ng-model="app.user.lastname"></div>
         <div class="checkbox">
             <label>
                 <input type="checkbox" ng-model='app.user.saved'> Remember me</label>
         </div>
-        <button type="submit" class="btn btn-default" ng-click="app.saveUser()">Submit</button>
+        <button type="submit" class="btn btn-success" ng-click="app.saveUser()">Submit</button>
     </form>
 </div>

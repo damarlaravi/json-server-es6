@@ -1,6 +1,7 @@
 import angular from 'angular';
 import UserService from './UserService';
-import '../style/app.css';
+//import '../style/app.css';
+import '../style/bootstrap.css';
 
 let app = () => {
     return {
