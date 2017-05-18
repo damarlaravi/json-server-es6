@@ -1,0 +1,45 @@
+<div class="container">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Saved</th>
+            <th>Modify</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in app.savedUsers">
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>{{ !(user.saved) ? 'false' : 'true'}}</td>
+            <td>
+                <div>
+                    <button class="btn btn-danger" ng-click="app.modifyUser(user)"> Edit</button>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <button class="btn btn-danger" ng-click="app.deleteUser(user.id)"> Delete</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="email">firstName</label>
+            <input type="text" class="form-control" id="email" ng-model="app.user.firstname"></div>
+        <div class="form-group">
+            <label class="sr-only" for="pwd">last name:</label>
+            <input type="text" class="form-control" id="pwd" ng-model="app.user.lastname"></div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model='app.user.saved'> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="app.saveUser()">Submit</button>
+    </form>
+</div>
